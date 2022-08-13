@@ -1,6 +1,7 @@
 from project.facade.data_parser import DataParser
 from project.helpers.building_constructor import BuildingConstructor
 from project import db
+from project import logger
 
 
 class Controller:
@@ -8,6 +9,7 @@ class Controller:
         self.parsed_data = DataParser.parse_data(requested_data)
 
     def save_data(self):
+        logger.info("Guardando datos en la base de datos")
         self.add_buildings_data()
         self.calculate_cinema_data()
         self.calculate_totals()
