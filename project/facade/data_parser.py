@@ -5,7 +5,7 @@ from project.facade.requested_data import RequestedData
 class DataParser:
     @classmethod
     def read_data(cls, raw_data):
-        return csv.DictReader(raw_data.text.splitlines())
+        return csv.DictReader(raw_data.splitlines())
 
     @classmethod
     def parse_data(cls, requested_data):

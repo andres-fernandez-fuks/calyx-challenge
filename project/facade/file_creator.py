@@ -8,8 +8,8 @@ class FileCreator:
     @classmethod
     def create_files(cls, requested_data):
         with open(cls.MUSEUMS_FILE_PATH, "w") as f:
-            f.write(requested_data.museums_data.text)
+            f.write(requested_data.museums_data)
         with open(cls.CINEMAS_FILE_PATH, "w") as f:
-            f.write(requested_data.cinemas_data.text)
+            f.write(requested_data.cinemas_data)
         with open(cls.LIBRARIES_FILE_PATH, "w") as f:
-            f.write(requested_data.libraries_data.text)
+            f.write(requested_data.libraries_data)

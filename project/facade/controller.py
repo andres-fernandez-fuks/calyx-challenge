@@ -1,4 +1,6 @@
 from project.facade.data_parser import DataParser
+from project.helpers.building_constructor import BuildingConstructor
+from project import db
 
 
 class Controller:
@@ -28,11 +30,11 @@ class Controller:
     def create_buildings(self, buildings_data, building_type):
         for building_data in buildings_data:
             self.create_building(building_data, building_type)
+        db.session.commit()
 
     def create_building(self, building_data, building_type):
-        building_data["type"] = building_type
-        # building = Building(**building_data)
-        # db.session.add(building)
+        building = BuildingConstructor.create_building(building_data, building_type)
+        db.session.add(building)
 
     def calculate_totals(self):
         pass

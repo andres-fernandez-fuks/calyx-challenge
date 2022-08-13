@@ -1,4 +1,7 @@
 from project.facade.processor import Processor
+from project import create_app
 
 if __name__ == "__main__":
-    Processor.start_process()
+    app = create_app()
+    with app.app_context():
+        Processor.start_process()
