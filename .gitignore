@@ -111,6 +111,4 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-drop_db.sql
-create_db.sql
 *.csv
