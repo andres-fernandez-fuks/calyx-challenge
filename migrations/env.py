@@ -16,6 +16,8 @@ config = context.config
 # Interpret the config file for Python logging.
 # This line sets up loggers basically.
 
+# habilitar esta línea para ver los logs de las migraciones
+# fileConfig(config.config_file_name, disable_existing_loggers=False)
 logger = logging.getLogger('alembic.env')
 
 # add your model's MetaData object here

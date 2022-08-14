@@ -54,13 +54,7 @@ class BuildingConstructor:
         building_data = cls.translate_keys(raw_building_data)
         cls.convert_integer_fields(building_data)
         building_data["category"] = building_type
-        try:
-            return Building(**building_data)
-        except Exception as e:
-            import pdb
-
-            pdb.set_trace()
-            return None
+        return Building(**building_data)
 
     @classmethod
     def translate_keys(cls, building_data):
