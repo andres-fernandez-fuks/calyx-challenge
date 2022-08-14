@@ -26,11 +26,16 @@ Si se quiere consultar la Base de Datos, se recomiendan:
 
 - Exportar las variables de entorno: export $(cat .env | xargs)
 - En el directorio raíz, ejecutar el comando: python app.py
+- Los archivos se guardan en la carpeta stored_data
 - Los logs de ejecución se encuentran en el archivo logs/app.log
 - Si se quiere consultar la Base de Datos (a nivel local):
     - Ejecutar el comando: docker-compose up db
     - Cofigurar la conexión a la Base de Datos desde DataGrip, de acuerdo a los datos del archivo .env
     - Ingresar a la Base de Datos y verificar que se hayan creado las tablas y se hayan cargado los datos.
+
+##### Otros:
+- Si fuera necesario, se puede droppear la Base de Datos con el siguiente comando: sudo -u postgres psql --dbname=postgres -f ./drop_db.sql
+
 
 
 

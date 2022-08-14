@@ -27,7 +27,7 @@ class DatabaseHandler:
         """
         Verifica si la base de datos existe
         """
-        creation_enabled = config("ENABLE_DATABASE_CREATION", cast=bool)
+        creation_enabled = config("ENABLE_DATABASE_CREATION", default=False, cast=bool)
         engine = create_engine(cls.SQLALCHEMY_DATABASE_URI)
         return creation_enabled and database_exists(engine.url)
 

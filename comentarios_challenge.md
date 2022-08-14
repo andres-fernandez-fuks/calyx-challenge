@@ -1,0 +1,11 @@
+##### Diseño
+- Elegí principalmente utilizar el patrón Facade, siendo la clase Processor el punto de entrada al sistema.
+- Decidí no utilizar la funcionalidad de pandas dataframe.to_sql, ya que el procesamiento en cada una de las tres tablas era distinto:
+    - Para la tabla principal (buildings), decidí parsear y convertir manualmente los datos, ya que el formato de los mismos no era consistente.
+    - Para la tabla de Totales (totals), decidí utilizar queries de SQL para hacer los cálculos.
+    - Para la tabla de Datos de Cine (cinema_datas), como la información no estaba en la base de datos, decidí utilizar dataframes de pandas para hacer los cálculos.
+- Teniendo en cuenta que el procesamiento es relativamente simple y con etapas identificadas, decidí solamente atrapar las excepciones al final del procesamiento, y comunicarlas a través del archivo de logs.
+- También utilicé los logs a nivel info para comunicar el estado del procesamiento.
+- Una decisión imporante fue cómo crear y poblar las tablas de Totales y Datos de Cine: no estaba seguro de si crear o no modelos para estas tablas, ya que se trataba de simples cálculos sobre otros datos. Finalmente, y entendiendo que es una buena práctica del uso de sqlAlchemy, decidí crear modelos para estas tablas, utilizando los controladores para hacer los cálculos.
+- En lugar de crear scripts sql para crear la base de datos y las tablas, teniendo en cuenta que se requería el uso de sqlAlchemy, decidí utilizar funcionalidades propias del framework para hacerlo.
+- Si bien el enunciado no especificaba que esto fuera a ejecutarse en un ambiente remoto, decidí agregar la variable de entorno ENABLE_DATABASE_CREATION, para que el usuario pueda decidir si quiere crear la base de datos o no. Si se corre a nivel local, se debería dejar en True, y si se corre en un ambiente remoto, se puede dejar en False o no definir, teniendo en cuenta que la base de datos ya estaría creada.
