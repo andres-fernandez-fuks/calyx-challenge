@@ -1,4 +1,7 @@
 class FileCreator:
+    """
+    Guarda la información obtenida en archivos csv.
+    """
 
     STORAGE_FOLDER = "stored_data"
     MUSEUMS_FILE_PATH = f"{STORAGE_FOLDER}/museums.csv"

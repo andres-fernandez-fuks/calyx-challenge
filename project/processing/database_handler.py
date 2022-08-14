@@ -9,11 +9,17 @@ from project import logger
 
 
 class DatabaseHandler:
+    """
+    Se encarga de crear la Base de Datos (si no existe) y de actualizarla de ser necesario.
+    """
+
     HOST = config("POSTGRES_HOST")
     USERNAME = config("POSTGRES_USER")
     PASSWORD = config("POSTGRES_PASSWORD")
     DATABASE = config("POSTGRES_DB")
-    SQLALCHEMY_DATABASE_URI = f"postgresql+psycopg2://{USERNAME}:{PASSWORD}@{HOST}/{DATABASE}"
+    SQLALCHEMY_DATABASE_URI = (
+        f"postgresql+psycopg2://{USERNAME}:{PASSWORD}@{HOST}/{DATABASE}"
+    )
     ALEMBIC_CONFIG_PATH = "migrations/alembic.ini"
     alembic_cfg = Config(ALEMBIC_CONFIG_PATH)
 
@@ -28,11 +34,10 @@ class DatabaseHandler:
         engine = create_engine(cls.SQLALCHEMY_DATABASE_URI)
         if database_exists(engine.url):
             logger.info("La base de datos ya existe")
-            return
-
-        logger.info("Creando base de datos...")
-        create_database(engine.url)
-        engine.execute(
-            f"GRANT ALL PRIVILEGES ON DATABASE {cls.DATABASE} TO {cls.USERNAME}"
-        )
-
+        else:
+            logger.info("Creando base de datos...")
+            create_database(engine.url)
+            engine.execute(
+                f"GRANT ALL PRIVILEGES ON DATABASE {cls.DATABASE} TO {cls.USERNAME}"
+            )
+        cls.upgrade_database()

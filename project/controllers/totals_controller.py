@@ -6,6 +6,13 @@ from project import logger
 
 
 class TotalsController:
+    '''
+    Calcula los siguientes totales:
+        - Registros totales por categoría de Edificio
+        - Registros totales por fuente de datos
+        - Registros totales por provincia y categoría de Edificio
+    y los guarda en la base de datos
+    '''
     @classmethod
     def calculate_totals(cls):
         logger.info("Calculando totales...")
@@ -13,6 +20,7 @@ class TotalsController:
         cls.calculate_total_registries_per_source()
         cls.calculate_total_registries_per_category_and_province()
         db.session.commit()
+        logger.info("Totales guardados")
 
     @classmethod
     def add_raw_totals(cls, raw_totals, category_name):

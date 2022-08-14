@@ -2,6 +2,9 @@ import logging
 
 
 class Logger:
+    """
+    Setea el logger propio de la librería logging y wrappea sus métodos
+    """
     LOG_FILE_NAME = "app.log"
     LOG_FORMAT = "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
 

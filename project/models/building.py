@@ -3,6 +3,9 @@ from project.models.base_model import BaseModel
 
 
 class Building(BaseModel):
+    '''
+    Representa un edificio, que puede ser un museo, una biblioteca o un cine
+    '''
     __tablename__ = "buildings"
 
     location_code = db.Column(db.Integer)

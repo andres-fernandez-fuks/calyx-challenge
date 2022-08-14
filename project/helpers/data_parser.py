@@ -1,8 +1,11 @@
 import csv
-from project.facade.requested_data import RequestedData
+from project.wrappers.requested_data import RequestedData
 
 
 class DataParser:
+    """
+    Parsea los datos de entrada y los devuelve en un objeto RequestedData
+    """
     @classmethod
     def read_data(cls, raw_data):
         return csv.DictReader(raw_data.splitlines())

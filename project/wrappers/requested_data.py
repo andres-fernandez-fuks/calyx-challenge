@@ -1,6 +1,6 @@
 class RequestedData:
     """
-    Basically behaves like a dictionary, I was taught to avoid returning dictionaries inside the model
+    Es un wrapper de un diccionario, utilizado en distintos puntos del procesamiento.
     """
 
     def __init__(self, museums_data, cinemas_data, libraries_data):

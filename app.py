@@ -1,4 +1,4 @@
-from project.facade.processor import Processor
+from project.processing.processor import Processor
 from project import create_app
 
 if __name__ == "__main__":

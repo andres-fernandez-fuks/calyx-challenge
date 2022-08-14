@@ -4,6 +4,7 @@ from project.models.building import Building
 class BuildingConstructor:
     """
     Clase borde, que conoce tanto el formato en el que entra el archivo como la clase Building de models
+    Recibe los datos con el formato de entrada y los transforma a un objeto Building
     """
 
     TRANSLATOR = {
