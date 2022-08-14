@@ -14,6 +14,7 @@ Si se quiere consultar la Base de Datos, se recomiendan:
 - Clonar el repositorio
 - Posicionarse en la carpeta raíz del proyecto
 - Crear un virtualenv: python3 -m venv /path/to/new/virtual/environment.
+- Ingresar al entorno virtual: source /path/to/new/virtual/environment/bin/activate
 - Instalar las dependencias: pip install -r requirements.txt
 - Crear un archivo .env en la raíz del proyecto con las siguientes claves:
     - POSTGRES_USER (usuario de postgres)
@@ -24,6 +25,7 @@ Si se quiere consultar la Base de Datos, se recomiendan:
 
 ##### Ejecución:
 
+- Ingresar al entorno virtual (si es necesario): source /path/to/new/virtual/environment/bin/activate
 - Exportar las variables de entorno: export $(cat .env | xargs)
 - En el directorio raíz, ejecutar el comando: python app.py
 - Los archivos se guardan en la carpeta stored_data

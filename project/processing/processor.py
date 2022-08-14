@@ -22,6 +22,7 @@ class Processor:
             BuildingController(requested_data).save_data()
             TotalsController.calculate_totals()
             CinemaDataController.calculate_cinema_data(requested_data.cinemas_data)
+            logger.info("Procesamiento finalizado")
         except Exception as e:
             logger.error(e)
 
