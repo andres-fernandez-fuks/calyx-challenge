@@ -1,10 +1,10 @@
 from project import db
+from project.models.base_model import BaseModel
 
 
-class Building(db.Model):
+class Building(BaseModel):
     __tablename__ = "buildings"
 
-    id = db.Column(db.Integer, primary_key=True)
     location_code = db.Column(db.Integer)
     province_id = db.Column(db.Integer)
     department_id = db.Column(db.Integer)

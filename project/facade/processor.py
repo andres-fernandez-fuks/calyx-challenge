@@ -1,6 +1,6 @@
 from project.facade.requester import Requester
 from project.facade.file_creator import FileCreator
-from project.facade.controller import Controller
+from project.controllers.building_controller import Controller
 from project.facade.database_handler import DatabaseHandler
 from project import logger
 class Processor:
@@ -11,7 +11,7 @@ class Processor:
             DatabaseHandler.upgrade_database()
             requested_data = Requester.get_data()
             FileCreator.create_files(requested_data)
-            Controller(requested_data).save_data()
+            BuildingController(requested_data).save_data()
         except Exception as e:
             logger.error(e)
 

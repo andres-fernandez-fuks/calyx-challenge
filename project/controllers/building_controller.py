@@ -4,18 +4,12 @@ from project import db
 from project import logger
 
 
-class Controller:
+class BuildingController:
     def __init__(self, requested_data):
         self.parsed_data = DataParser.parse_data(requested_data)
 
     def save_data(self):
         logger.info("Guardando datos en la base de datos")
-        self.add_buildings_data()
-        self.calculate_cinema_data()
-        self.calculate_totals()
-        # db.session.commit()
-
-    def add_buildings_data(self):
         self.create_museums()
         self.create_cinemas()
         self.create_libraries()
@@ -37,14 +31,4 @@ class Controller:
     def create_building(self, building_data, building_type):
         building = BuildingConstructor.create_building(building_data, building_type)
         db.session.add(building)
-
-    def calculate_totals(self):
-        pass
-        # totals = Totals(self.parsed_data)
-        # db.session.add(totals)
-
-    def calculate_cinema_data(self):
-        pass
-        # cinema_data = CinemaData(self.parsed_data)
-        # db.session.add(cinema_data)
 
