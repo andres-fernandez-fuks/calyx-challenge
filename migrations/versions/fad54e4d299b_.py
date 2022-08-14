@@ -1,4 +1,4 @@
-"""empty message
+"""creates buildings table
 
 Revision ID: fad54e4d299b
 Revises: 
