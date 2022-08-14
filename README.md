@@ -22,6 +22,7 @@ Si se quiere consultar la Base de Datos, se recomiendan:
     - POSTGRES_DB (nombre de la base de datos)
     - POSTGRES_HOST (host de postgres)
     - ENABLE_DATABASE_CREATION (True o False, si se quiere crear la base de datos) (si se corre a nivel local, dejar en True)
+Observación: asegurarse de que el usuario de postgres tenga permisos para crear bases de datos, y de que la contraseña sea la correcta.
 
 ##### Ejecución:
 
