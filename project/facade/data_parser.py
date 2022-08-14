@@ -17,3 +17,7 @@ class DataParser:
             cinemas_data=cinemas_data,
             libraries_data=libraries_data,
         )
+
+    @classmethod
+    def parse_cinema_data(cls, cinema_raw_data):
+        return cls.read_data(cinema_raw_data)

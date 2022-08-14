@@ -13,7 +13,7 @@ class DatabaseHandler:
     USERNAME = config("POSTGRES_USER")
     PASSWORD = config("POSTGRES_PASSWORD")
     DATABASE = config("POSTGRES_DB")
-    SQLALCHEMY_DATABASE_URI = f"postgresql://{USERNAME}:{PASSWORD}@{HOST}/{DATABASE}"
+    SQLALCHEMY_DATABASE_URI = f"postgresql+psycopg2://{USERNAME}:{PASSWORD}@{HOST}/{DATABASE}"
     ALEMBIC_CONFIG_PATH = "migrations/alembic.ini"
     alembic_cfg = Config(ALEMBIC_CONFIG_PATH)
 

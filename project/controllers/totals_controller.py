@@ -2,11 +2,13 @@ from project import db
 from sqlalchemy import func
 from project.models.building import Building
 from project.helpers.total_constructor import TotalConstructor
+from project import logger
 
 
 class TotalsController:
     @classmethod
     def calculate_totals(cls):
+        logger.info("Calculando totales...")
         cls.calculate_total_registries_per_category()
         cls.calculate_total_registries_per_source()
         cls.calculate_total_registries_per_category_and_province()
