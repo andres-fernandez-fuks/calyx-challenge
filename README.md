@@ -11,6 +11,7 @@ Si se quiere consultar la Base de Datos, se recomiendan:
 - [DockerCompose](https://docs.docker.com/compose/install/)
 
 ##### Setup:
+- Clonar el repositorio
 - Posicionarse en la carpeta raíz del proyecto
 - Crear un virtualenv: python3 -m venv /path/to/new/virtual/environment.
 - Instalar las dependencias: pip install -r requirements.txt
