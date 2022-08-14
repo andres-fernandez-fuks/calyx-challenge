@@ -6,7 +6,8 @@
 - [Pip](https://pip.pypa.io/en/stable/installing/)
 - [PostgreSQL](https://www.postgresql.org/download/)
 - [Virtualenv](https://virtualenv.pypa.io/en/stable/installation/)
-Si se quiere consultar la Base de Datos, se recomiendan:
+
+(Opcional) si se quiere consultar la Base de Datos, se recomiendan:
 - [DataGrip](https://www.jetbrains.com/datagrip/)
 - [DockerCompose](https://docs.docker.com/compose/install/)
 
@@ -35,9 +36,6 @@ Observación: asegurarse de que el usuario de postgres tenga permisos para crear
     - Ejecutar el comando: docker-compose up db
     - Cofigurar la conexión a la Base de Datos desde DataGrip, de acuerdo a los datos del archivo .env
     - Ingresar a la Base de Datos y verificar que se hayan creado las tablas y se hayan cargado los datos.
-
-##### Otros:
-- Si fuera necesario, se puede droppear la Base de Datos con el siguiente comando: sudo -u postgres psql --dbname=postgres -f ./drop_db.sql
 
 
 

@@ -1,4 +1,3 @@
-##### Diseño
 - Elegí principalmente utilizar el patrón Facade, siendo la clase Processor el punto de entrada al sistema.
 - Decidí no utilizar la funcionalidad de pandas dataframe.to_sql, ya que el procesamiento en cada una de las tres tablas era distinto:
     - Para la tabla principal (buildings), decidí parsear y convertir manualmente los datos, ya que el formato de los mismos no era consistente.
