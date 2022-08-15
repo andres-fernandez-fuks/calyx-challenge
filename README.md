@@ -30,7 +30,7 @@ Observación: asegurarse de que el usuario de postgres tenga permisos para crear
 - Ingresar al entorno virtual (si es necesario): source /path/to/new/virtual/environment/bin/activate
 - Exportar las variables de entorno: export $(cat .env | xargs)
 - En el directorio raíz, ejecutar el comando: python app.py
-- Los archivos se guardan en la carpeta stored_data
+- Los archivos se guardan en la carpeta stored_data, y luego de acuerdo al formato del enunciado
 - Los logs de ejecución se encuentran en el archivo logs/app.log
 - Si se quiere consultar la Base de Datos (a nivel local):
     - Ejecutar el comando: docker-compose up db
