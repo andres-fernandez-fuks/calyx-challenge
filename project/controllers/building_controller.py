@@ -9,6 +9,7 @@ class BuildingController:
     Normaliza la información de los Edificios y la guarda en la base de datos
     '''
     def __init__(self, requested_data):
+        # Inicializo esta clase para no tener que pasarle los datos a cada método
         self.parsed_data = DataParser.parse_data(requested_data)
 
     def save_data(self):

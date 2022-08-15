@@ -16,8 +16,8 @@ class Processor:
     def start_process(app):
         try:
             logger.info("Iniciando procesamiento...")
-            DatabaseHandler.create_database(app)
             requested_data = DataRequester.get_data()
+            DatabaseHandler.create_database(app)
             FileCreator.create_files(requested_data)
             BuildingController(requested_data).save_data()
             TotalsController.calculate_totals()
