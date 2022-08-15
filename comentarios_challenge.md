@@ -10,3 +10,4 @@
 - En lugar de crear scripts sql para crear la base de datos y las tablas, teniendo en cuenta que se requería el uso de sqlAlchemy, decidí utilizar funcionalidades propias del framework para hacerlo.
 - Si bien el enunciado no especificaba que esto fuera a ejecutarse en un ambiente remoto, decidí agregar la variable de entorno ENABLE_DATABASE_CREATION, para que el usuario pueda decidir si quiere crear la base de datos o no. Si se corre a nivel local, se debería dejar en True, y si se corre en un ambiente remoto, se puede dejar en False o no definir, teniendo en cuenta que la base de datos ya estaría creada.
 - Para el nombre de los meses en el guardado de archivos, intenté utilizar strftime seteando la configuración de locale a español, pero no funcionó, por lo que tuve hacerlo manualmente.
+- No usé branches para el desarrollo, ya que el proyecto es relativamente pequeño y no sentí que fueran requeridas.
